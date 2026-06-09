@@ -1,160 +1,116 @@
-import { useRef, useEffect, useMemo } from 'react';
-import * as THREE from 'three';
-import { useDeviceStore } from '@/stores/deviceStore';
+import { useMemo } from 'react'
+import * as THREE from 'three'
+import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
+import { useDeviceStore } from '@/stores/deviceStore'
 
-const POST_COUNT = 64;
-const BEAM_COUNT = 48;
-const TANK_COUNT = 32;
-const PAD_COUNT = 128;
+export default function SubstationModel() {
+  const devices = useDeviceStore((s) => s.devices)
+  const devList = useMemo(() => Object.values(devices), [devices])
 
-function SteelInstances() {
-  const postRef = useRef<THREE.InstancedMesh>(null);
-  const beamRef = useRef<THREE.InstancedMesh>(null);
+  const { mergedStructGeo, groundGeo, busGeo } = useMemo(() => {
+    const geos: THREE.BufferGeometry[] = []
+    const dummy = new THREE.Object3D()
 
-  useEffect(() => {
-    const dummy = new THREE.Object3D();
-    let pi = 0;
+    const padGeo = new THREE.BoxGeometry(2, 0.3, 1.5)
+    for (const dev of devList) {
+      dummy.position.set(dev.position[0], 0.15, dev.position[2] * 5)
+      dummy.scale.set(1, 1, 1)
+      dummy.updateMatrix()
+      const cloned = padGeo.clone()
+      cloned.applyMatrix4(dummy.matrix)
+      geos.push(cloned)
+    }
+    padGeo.dispose()
 
+    const postGeo = new THREE.CylinderGeometry(0.2, 0.2, 8, 6)
     for (let z = 1; z <= 8; z++) {
       for (const x of [0, 24, 51]) {
-        if (pi >= POST_COUNT) break;
-        dummy.position.set(x, 4, z * 5);
-        dummy.scale.set(1, 1, 1);
-        dummy.updateMatrix();
-        postRef.current?.setMatrixAt(pi++, dummy.matrix);
+        dummy.position.set(x, 4, z * 5)
+        dummy.scale.set(1, 1, 1)
+        dummy.updateMatrix()
+        const cloned = postGeo.clone()
+        cloned.applyMatrix4(dummy.matrix)
+        geos.push(cloned)
       }
     }
-    for (let i = pi; i < POST_COUNT; i++) {
-      dummy.position.set(0, -100, 0);
-      dummy.updateMatrix();
-      postRef.current?.setMatrixAt(i, dummy.matrix);
-    }
-    postRef.current!.instanceMatrix.needsUpdate = true;
+    postGeo.dispose()
 
-    let bi = 0;
+    const beamGeo = new THREE.BoxGeometry(1, 0.3, 0.3)
     for (let z = 1; z <= 8; z++) {
       for (const y of [4, 8]) {
-        for (const [ax, bx] of [[0, 24], [24, 51]]) {
-          if (bi >= BEAM_COUNT) break;
-          const mx = (ax + bx) / 2;
-          dummy.position.set(mx, y, z * 5);
-          dummy.scale.set(bx - ax, 1, 1);
-          dummy.updateMatrix();
-          beamRef.current?.setMatrixAt(bi++, dummy.matrix);
+        for (const [ax, bx] of [[0, 24], [24, 51]] as [number, number][]) {
+          const mx = (ax + bx) / 2
+          dummy.position.set(mx, y, z * 5)
+          dummy.scale.set(bx - ax, 1, 1)
+          dummy.updateMatrix()
+          const cloned = beamGeo.clone()
+          cloned.applyMatrix4(dummy.matrix)
+          geos.push(cloned)
         }
       }
     }
-    for (let i = bi; i < BEAM_COUNT; i++) {
-      dummy.position.set(0, -100, 0);
-      dummy.updateMatrix();
-      beamRef.current?.setMatrixAt(i, dummy.matrix);
+    beamGeo.dispose()
+
+    const tankGeo = new THREE.BoxGeometry(3, 4, 2.5)
+    for (const dev of devList) {
+      if (dev.type !== 2) continue
+      dummy.position.set(dev.position[0], 2, dev.position[2] * 5)
+      dummy.scale.set(1, 1, 1)
+      dummy.updateMatrix()
+      const cloned = tankGeo.clone()
+      cloned.applyMatrix4(dummy.matrix)
+      geos.push(cloned)
     }
-    beamRef.current!.instanceMatrix.needsUpdate = true;
-  }, []);
+    tankGeo.dispose()
 
-  return (
-    <>
-      <instancedMesh ref={postRef} args={[undefined, undefined, POST_COUNT]}>
-        <cylinderGeometry args={[0.2, 0.2, 8, 6]} />
-        <meshStandardMaterial color="#3a4a5c" roughness={0.7} metalness={0.6} />
-      </instancedMesh>
-      <instancedMesh ref={beamRef} args={[undefined, undefined, BEAM_COUNT]}>
-        <boxGeometry args={[1, 0.3, 0.3]} />
-        <meshStandardMaterial color="#3a4a5c" roughness={0.7} metalness={0.6} />
-      </instancedMesh>
-    </>
-  );
-}
+    const mergedStructGeo = mergeGeometries(geos, false)
+    for (const g of geos) g.dispose()
 
-function TransformerTanks() {
-  const meshRef = useRef<THREE.InstancedMesh>(null);
-  const devices = useDeviceStore((s) => s.devices);
+    const groundGeo = new THREE.PlaneGeometry(80, 60)
+    groundGeo.rotateX(-Math.PI / 2)
 
-  useEffect(() => {
-    if (!meshRef.current) return;
-    const dummy = new THREE.Object3D();
-    let i = 0;
-    for (const dev of Object.values(devices)) {
-      if (dev.type !== 2) continue;
-      if (i >= TANK_COUNT) break;
-      dummy.position.set(dev.position[0], 2, dev.position[2] * 5);
-      dummy.updateMatrix();
-      meshRef.current.setMatrixAt(i++, dummy.matrix);
+    const busParts: THREE.BufferGeometry[] = []
+    const busGeo = new THREE.CylinderGeometry(0.15, 0.15, 51, 8)
+    busGeo.rotateZ(Math.PI / 2)
+    for (const z of [10, 25, 40]) {
+      dummy.position.set(25.5, 8, z)
+      dummy.scale.set(1, 1, 1)
+      dummy.updateMatrix()
+      const cloned = busGeo.clone()
+      cloned.applyMatrix4(dummy.matrix)
+      busParts.push(cloned)
     }
-    for (; i < TANK_COUNT; i++) {
-      dummy.position.set(0, -100, 0);
-      dummy.updateMatrix();
-      meshRef.current.setMatrixAt(i, dummy.matrix);
+    busGeo.dispose()
+    const busGeoMerged = mergeGeometries(busParts, false)
+    for (const g of busParts) g.dispose()
+
+    return {
+      mergedStructGeo: mergedStructGeo ?? new THREE.BufferGeometry(),
+      groundGeo,
+      busGeo: busGeoMerged ?? new THREE.BufferGeometry(),
     }
-    meshRef.current.instanceMatrix.needsUpdate = true;
-  }, [devices]);
+  }, [devList])
 
-  return (
-    <instancedMesh ref={meshRef} args={[undefined, undefined, TANK_COUNT]}>
-      <boxGeometry args={[3, 4, 2.5]} />
-      <meshStandardMaterial color="#1a2a3a" roughness={0.5} metalness={0.7} />
-    </instancedMesh>
-  );
-}
-
-function FoundationPads() {
-  const meshRef = useRef<THREE.InstancedMesh>(null);
-  const devices = useDeviceStore((s) => s.devices);
-
-  useEffect(() => {
-    if (!meshRef.current) return;
-    const dummy = new THREE.Object3D();
-    let i = 0;
-    for (const dev of Object.values(devices)) {
-      if (i >= PAD_COUNT) break;
-      dummy.position.set(dev.position[0], 0.15, dev.position[2] * 5);
-      dummy.updateMatrix();
-      meshRef.current.setMatrixAt(i++, dummy.matrix);
-    }
-    meshRef.current.instanceMatrix.needsUpdate = true;
-  }, [devices]);
-
-  return (
-    <instancedMesh ref={meshRef} args={[undefined, undefined, PAD_COUNT]}>
-      <boxGeometry args={[2, 0.3, 1.5]} />
-      <meshStandardMaterial color="#2a2a2a" roughness={0.9} metalness={0.1} />
-    </instancedMesh>
-  );
-}
-
-function BusBars() {
-  const bars = useMemo(
-    () => [
-      { pos: [25.5, 8, 10] as [number, number, number], len: 51 },
-      { pos: [25.5, 8, 25] as [number, number, number], len: 51 },
-      { pos: [25.5, 8, 40] as [number, number, number], len: 51 },
-    ],
+  const steelMaterial = useMemo(
+    () => new THREE.MeshStandardMaterial({ color: '#3a4a5c', roughness: 0.7, metalness: 0.6 }),
     []
-  );
+  )
 
-  return (
-    <>
-      {bars.map((bar, i) => (
-        <mesh key={i} position={bar.pos} rotation={[0, 0, Math.PI / 2]}>
-          <cylinderGeometry args={[0.15, 0.15, bar.len, 8]} />
-          <meshStandardMaterial color="#CC8800" roughness={0.3} metalness={0.8} />
-        </mesh>
-      ))}
-    </>
-  );
-}
+  const groundMaterial = useMemo(
+    () => new THREE.MeshStandardMaterial({ color: '#0d1117', roughness: 1, metalness: 0 }),
+    []
+  )
 
-export default function SubstationModel() {
+  const copperMaterial = useMemo(
+    () => new THREE.MeshStandardMaterial({ color: '#CC8800', roughness: 0.3, metalness: 0.8 }),
+    []
+  )
+
   return (
     <group>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[25, 0, 22]}>
-        <planeGeometry args={[80, 60]} />
-        <meshStandardMaterial color="#0d1117" roughness={1} metalness={0} />
-      </mesh>
-      <BusBars />
-      <SteelInstances />
-      <TransformerTanks />
-      <FoundationPads />
+      <mesh geometry={groundGeo} material={groundMaterial} position={[25, 0, 22]} />
+      <mesh geometry={mergedStructGeo} material={steelMaterial} />
+      <mesh geometry={busGeo} material={copperMaterial} />
     </group>
-  );
+  )
 }

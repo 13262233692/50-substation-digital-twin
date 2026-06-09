@@ -3,6 +3,7 @@ import SubstationScene from '@/components/three/SubstationScene'
 import TopNav from '@/components/ui/TopNav'
 import DeviceStatusPanel from '@/components/ui/DeviceStatusPanel'
 import AlertBar from '@/components/ui/AlertBar'
+import PerformanceOverlay from '@/components/ui/PerformanceOverlay'
 import { useWebSocket } from '@/hooks/useWebSocket'
 import { useConnectionStore } from '@/stores/connectionStore'
 
@@ -31,6 +32,7 @@ export default function Home() {
       <div className="flex-1 relative mt-14">
         <SubstationScene />
         <DeviceStatusPanel />
+        <PerformanceOverlay />
       </div>
       <AlertBar />
     </div>

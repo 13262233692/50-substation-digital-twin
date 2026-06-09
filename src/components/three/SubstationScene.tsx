@@ -1,11 +1,11 @@
-import { Canvas } from '@react-three/fiber';
-import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
-import SubstationModel from './SubstationModel';
-import InsulatorInstances from './InsulatorInstances';
-import SwitchCoverInstances from './SwitchCoverInstances';
-import BreakerBladeInstances from './BreakerBladeInstances';
-import EnergyFieldInstances from './EnergyFieldInstances';
-import BloomEffect from './BloomEffect';
+import { Canvas } from '@react-three/fiber'
+import { PerspectiveCamera, OrbitControls } from '@react-three/drei'
+import MergedGLTFModel from './MergedGLTFModel'
+import InsulatorInstances from './InsulatorInstances'
+import SwitchCoverInstances from './SwitchCoverInstances'
+import BreakerBladeInstances from './BreakerBladeInstances'
+import EnergyFieldInstances from './EnergyFieldInstances'
+import BloomEffect from './BloomEffect'
 
 export default function SubstationScene() {
   return (
@@ -27,12 +27,12 @@ export default function SubstationScene() {
       <ambientLight intensity={0.15} color="#1a2040" />
       <directionalLight intensity={0.4} color="#4466aa" position={[50, 80, 30]} />
       <BloomEffect>
-        <SubstationModel />
+        <MergedGLTFModel />
         <InsulatorInstances />
         <SwitchCoverInstances />
         <BreakerBladeInstances />
         <EnergyFieldInstances />
       </BloomEffect>
     </Canvas>
-  );
+  )
 }
