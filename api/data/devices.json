@@ -1,0 +1,1553 @@
+{
+  "modbus": {
+    "host": "127.0.0.1",
+    "port": 502,
+    "pollIntervalMs": 200,
+    "slaveStart": 1,
+    "slaveEnd": 128,
+    "timeoutMs": 1000
+  },
+  "push": {
+    "wsPort": 8081,
+    "pushIntervalMs": 200,
+    "maxConnections": 10
+  },
+  "devices": [
+    {
+      "id": 1,
+      "type": 0,
+      "name": "Bay-1-BRK-1",
+      "slaveId": 1,
+      "registerBase": 0,
+      "position": [
+        3,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "type": 0,
+      "name": "Bay-1-BRK-2",
+      "slaveId": 2,
+      "registerBase": 10,
+      "position": [
+        6,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "type": 0,
+      "name": "Bay-1-BRK-3",
+      "slaveId": 3,
+      "registerBase": 20,
+      "position": [
+        9,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "type": 0,
+      "name": "Bay-1-BRK-4",
+      "slaveId": 4,
+      "registerBase": 30,
+      "position": [
+        12,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "type": 0,
+      "name": "Bay-1-BRK-5",
+      "slaveId": 5,
+      "registerBase": 40,
+      "position": [
+        15,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "type": 0,
+      "name": "Bay-1-BRK-6",
+      "slaveId": 6,
+      "registerBase": 50,
+      "position": [
+        18,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "type": 1,
+      "name": "Bay-1-DS-1",
+      "slaveId": 7,
+      "registerBase": 60,
+      "position": [
+        21,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": 1,
+      "name": "Bay-1-DS-2",
+      "slaveId": 8,
+      "registerBase": 70,
+      "position": [
+        24,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "type": 1,
+      "name": "Bay-1-DS-3",
+      "slaveId": 9,
+      "registerBase": 80,
+      "position": [
+        27,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 10,
+      "type": 1,
+      "name": "Bay-1-DS-4",
+      "slaveId": 10,
+      "registerBase": 90,
+      "position": [
+        30,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 11,
+      "type": 1,
+      "name": "Bay-1-DS-5",
+      "slaveId": 11,
+      "registerBase": 100,
+      "position": [
+        33,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "type": 1,
+      "name": "Bay-1-DS-6",
+      "slaveId": 12,
+      "registerBase": 110,
+      "position": [
+        36,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 13,
+      "type": 2,
+      "name": "Bay-1-TR-1",
+      "slaveId": 13,
+      "registerBase": 120,
+      "position": [
+        39,
+        6,
+        1
+      ]
+    },
+    {
+      "id": 14,
+      "type": 2,
+      "name": "Bay-1-TR-2",
+      "slaveId": 14,
+      "registerBase": 130,
+      "position": [
+        42,
+        6,
+        1
+      ]
+    },
+    {
+      "id": 15,
+      "type": 2,
+      "name": "Bay-1-TR-3",
+      "slaveId": 15,
+      "registerBase": 140,
+      "position": [
+        45,
+        6,
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": 2,
+      "name": "Bay-1-TR-4",
+      "slaveId": 16,
+      "registerBase": 150,
+      "position": [
+        48,
+        6,
+        1
+      ]
+    },
+    {
+      "id": 17,
+      "type": 0,
+      "name": "Bay-2-BRK-1",
+      "slaveId": 17,
+      "registerBase": 160,
+      "position": [
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "id": 18,
+      "type": 0,
+      "name": "Bay-2-BRK-2",
+      "slaveId": 18,
+      "registerBase": 170,
+      "position": [
+        6,
+        0,
+        2
+      ]
+    },
+    {
+      "id": 19,
+      "type": 0,
+      "name": "Bay-2-BRK-3",
+      "slaveId": 19,
+      "registerBase": 180,
+      "position": [
+        9,
+        0,
+        2
+      ]
+    },
+    {
+      "id": 20,
+      "type": 0,
+      "name": "Bay-2-BRK-4",
+      "slaveId": 20,
+      "registerBase": 190,
+      "position": [
+        12,
+        0,
+        2
+      ]
+    },
+    {
+      "id": 21,
+      "type": 0,
+      "name": "Bay-2-BRK-5",
+      "slaveId": 21,
+      "registerBase": 200,
+      "position": [
+        15,
+        0,
+        2
+      ]
+    },
+    {
+      "id": 22,
+      "type": 0,
+      "name": "Bay-2-BRK-6",
+      "slaveId": 22,
+      "registerBase": 210,
+      "position": [
+        18,
+        0,
+        2
+      ]
+    },
+    {
+      "id": 23,
+      "type": 1,
+      "name": "Bay-2-DS-1",
+      "slaveId": 23,
+      "registerBase": 220,
+      "position": [
+        21,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 24,
+      "type": 1,
+      "name": "Bay-2-DS-2",
+      "slaveId": 24,
+      "registerBase": 230,
+      "position": [
+        24,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 25,
+      "type": 1,
+      "name": "Bay-2-DS-3",
+      "slaveId": 25,
+      "registerBase": 240,
+      "position": [
+        27,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 26,
+      "type": 1,
+      "name": "Bay-2-DS-4",
+      "slaveId": 26,
+      "registerBase": 250,
+      "position": [
+        30,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 27,
+      "type": 1,
+      "name": "Bay-2-DS-5",
+      "slaveId": 27,
+      "registerBase": 260,
+      "position": [
+        33,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 28,
+      "type": 1,
+      "name": "Bay-2-DS-6",
+      "slaveId": 28,
+      "registerBase": 270,
+      "position": [
+        36,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 29,
+      "type": 2,
+      "name": "Bay-2-TR-1",
+      "slaveId": 29,
+      "registerBase": 280,
+      "position": [
+        39,
+        6,
+        2
+      ]
+    },
+    {
+      "id": 30,
+      "type": 2,
+      "name": "Bay-2-TR-2",
+      "slaveId": 30,
+      "registerBase": 290,
+      "position": [
+        42,
+        6,
+        2
+      ]
+    },
+    {
+      "id": 31,
+      "type": 2,
+      "name": "Bay-2-TR-3",
+      "slaveId": 31,
+      "registerBase": 300,
+      "position": [
+        45,
+        6,
+        2
+      ]
+    },
+    {
+      "id": 32,
+      "type": 2,
+      "name": "Bay-2-TR-4",
+      "slaveId": 32,
+      "registerBase": 310,
+      "position": [
+        48,
+        6,
+        2
+      ]
+    },
+    {
+      "id": 33,
+      "type": 0,
+      "name": "Bay-3-BRK-1",
+      "slaveId": 33,
+      "registerBase": 320,
+      "position": [
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "id": 34,
+      "type": 0,
+      "name": "Bay-3-BRK-2",
+      "slaveId": 34,
+      "registerBase": 330,
+      "position": [
+        6,
+        0,
+        3
+      ]
+    },
+    {
+      "id": 35,
+      "type": 0,
+      "name": "Bay-3-BRK-3",
+      "slaveId": 35,
+      "registerBase": 340,
+      "position": [
+        9,
+        0,
+        3
+      ]
+    },
+    {
+      "id": 36,
+      "type": 0,
+      "name": "Bay-3-BRK-4",
+      "slaveId": 36,
+      "registerBase": 350,
+      "position": [
+        12,
+        0,
+        3
+      ]
+    },
+    {
+      "id": 37,
+      "type": 0,
+      "name": "Bay-3-BRK-5",
+      "slaveId": 37,
+      "registerBase": 360,
+      "position": [
+        15,
+        0,
+        3
+      ]
+    },
+    {
+      "id": 38,
+      "type": 0,
+      "name": "Bay-3-BRK-6",
+      "slaveId": 38,
+      "registerBase": 370,
+      "position": [
+        18,
+        0,
+        3
+      ]
+    },
+    {
+      "id": 39,
+      "type": 1,
+      "name": "Bay-3-DS-1",
+      "slaveId": 39,
+      "registerBase": 380,
+      "position": [
+        21,
+        3,
+        3
+      ]
+    },
+    {
+      "id": 40,
+      "type": 1,
+      "name": "Bay-3-DS-2",
+      "slaveId": 40,
+      "registerBase": 390,
+      "position": [
+        24,
+        3,
+        3
+      ]
+    },
+    {
+      "id": 41,
+      "type": 1,
+      "name": "Bay-3-DS-3",
+      "slaveId": 41,
+      "registerBase": 400,
+      "position": [
+        27,
+        3,
+        3
+      ]
+    },
+    {
+      "id": 42,
+      "type": 1,
+      "name": "Bay-3-DS-4",
+      "slaveId": 42,
+      "registerBase": 410,
+      "position": [
+        30,
+        3,
+        3
+      ]
+    },
+    {
+      "id": 43,
+      "type": 1,
+      "name": "Bay-3-DS-5",
+      "slaveId": 43,
+      "registerBase": 420,
+      "position": [
+        33,
+        3,
+        3
+      ]
+    },
+    {
+      "id": 44,
+      "type": 1,
+      "name": "Bay-3-DS-6",
+      "slaveId": 44,
+      "registerBase": 430,
+      "position": [
+        36,
+        3,
+        3
+      ]
+    },
+    {
+      "id": 45,
+      "type": 2,
+      "name": "Bay-3-TR-1",
+      "slaveId": 45,
+      "registerBase": 440,
+      "position": [
+        39,
+        6,
+        3
+      ]
+    },
+    {
+      "id": 46,
+      "type": 2,
+      "name": "Bay-3-TR-2",
+      "slaveId": 46,
+      "registerBase": 450,
+      "position": [
+        42,
+        6,
+        3
+      ]
+    },
+    {
+      "id": 47,
+      "type": 2,
+      "name": "Bay-3-TR-3",
+      "slaveId": 47,
+      "registerBase": 460,
+      "position": [
+        45,
+        6,
+        3
+      ]
+    },
+    {
+      "id": 48,
+      "type": 2,
+      "name": "Bay-3-TR-4",
+      "slaveId": 48,
+      "registerBase": 470,
+      "position": [
+        48,
+        6,
+        3
+      ]
+    },
+    {
+      "id": 49,
+      "type": 0,
+      "name": "Bay-4-BRK-1",
+      "slaveId": 49,
+      "registerBase": 480,
+      "position": [
+        3,
+        0,
+        4
+      ]
+    },
+    {
+      "id": 50,
+      "type": 0,
+      "name": "Bay-4-BRK-2",
+      "slaveId": 50,
+      "registerBase": 490,
+      "position": [
+        6,
+        0,
+        4
+      ]
+    },
+    {
+      "id": 51,
+      "type": 0,
+      "name": "Bay-4-BRK-3",
+      "slaveId": 51,
+      "registerBase": 500,
+      "position": [
+        9,
+        0,
+        4
+      ]
+    },
+    {
+      "id": 52,
+      "type": 0,
+      "name": "Bay-4-BRK-4",
+      "slaveId": 52,
+      "registerBase": 510,
+      "position": [
+        12,
+        0,
+        4
+      ]
+    },
+    {
+      "id": 53,
+      "type": 0,
+      "name": "Bay-4-BRK-5",
+      "slaveId": 53,
+      "registerBase": 520,
+      "position": [
+        15,
+        0,
+        4
+      ]
+    },
+    {
+      "id": 54,
+      "type": 0,
+      "name": "Bay-4-BRK-6",
+      "slaveId": 54,
+      "registerBase": 530,
+      "position": [
+        18,
+        0,
+        4
+      ]
+    },
+    {
+      "id": 55,
+      "type": 1,
+      "name": "Bay-4-DS-1",
+      "slaveId": 55,
+      "registerBase": 540,
+      "position": [
+        21,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 56,
+      "type": 1,
+      "name": "Bay-4-DS-2",
+      "slaveId": 56,
+      "registerBase": 550,
+      "position": [
+        24,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 57,
+      "type": 1,
+      "name": "Bay-4-DS-3",
+      "slaveId": 57,
+      "registerBase": 560,
+      "position": [
+        27,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 58,
+      "type": 1,
+      "name": "Bay-4-DS-4",
+      "slaveId": 58,
+      "registerBase": 570,
+      "position": [
+        30,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 59,
+      "type": 1,
+      "name": "Bay-4-DS-5",
+      "slaveId": 59,
+      "registerBase": 580,
+      "position": [
+        33,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 60,
+      "type": 1,
+      "name": "Bay-4-DS-6",
+      "slaveId": 60,
+      "registerBase": 590,
+      "position": [
+        36,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 61,
+      "type": 2,
+      "name": "Bay-4-TR-1",
+      "slaveId": 61,
+      "registerBase": 600,
+      "position": [
+        39,
+        6,
+        4
+      ]
+    },
+    {
+      "id": 62,
+      "type": 2,
+      "name": "Bay-4-TR-2",
+      "slaveId": 62,
+      "registerBase": 610,
+      "position": [
+        42,
+        6,
+        4
+      ]
+    },
+    {
+      "id": 63,
+      "type": 2,
+      "name": "Bay-4-TR-3",
+      "slaveId": 63,
+      "registerBase": 620,
+      "position": [
+        45,
+        6,
+        4
+      ]
+    },
+    {
+      "id": 64,
+      "type": 2,
+      "name": "Bay-4-TR-4",
+      "slaveId": 64,
+      "registerBase": 630,
+      "position": [
+        48,
+        6,
+        4
+      ]
+    },
+    {
+      "id": 65,
+      "type": 0,
+      "name": "Bay-5-BRK-1",
+      "slaveId": 65,
+      "registerBase": 640,
+      "position": [
+        3,
+        0,
+        5
+      ]
+    },
+    {
+      "id": 66,
+      "type": 0,
+      "name": "Bay-5-BRK-2",
+      "slaveId": 66,
+      "registerBase": 650,
+      "position": [
+        6,
+        0,
+        5
+      ]
+    },
+    {
+      "id": 67,
+      "type": 0,
+      "name": "Bay-5-BRK-3",
+      "slaveId": 67,
+      "registerBase": 660,
+      "position": [
+        9,
+        0,
+        5
+      ]
+    },
+    {
+      "id": 68,
+      "type": 0,
+      "name": "Bay-5-BRK-4",
+      "slaveId": 68,
+      "registerBase": 670,
+      "position": [
+        12,
+        0,
+        5
+      ]
+    },
+    {
+      "id": 69,
+      "type": 0,
+      "name": "Bay-5-BRK-5",
+      "slaveId": 69,
+      "registerBase": 680,
+      "position": [
+        15,
+        0,
+        5
+      ]
+    },
+    {
+      "id": 70,
+      "type": 0,
+      "name": "Bay-5-BRK-6",
+      "slaveId": 70,
+      "registerBase": 690,
+      "position": [
+        18,
+        0,
+        5
+      ]
+    },
+    {
+      "id": 71,
+      "type": 1,
+      "name": "Bay-5-DS-1",
+      "slaveId": 71,
+      "registerBase": 700,
+      "position": [
+        21,
+        3,
+        5
+      ]
+    },
+    {
+      "id": 72,
+      "type": 1,
+      "name": "Bay-5-DS-2",
+      "slaveId": 72,
+      "registerBase": 710,
+      "position": [
+        24,
+        3,
+        5
+      ]
+    },
+    {
+      "id": 73,
+      "type": 1,
+      "name": "Bay-5-DS-3",
+      "slaveId": 73,
+      "registerBase": 720,
+      "position": [
+        27,
+        3,
+        5
+      ]
+    },
+    {
+      "id": 74,
+      "type": 1,
+      "name": "Bay-5-DS-4",
+      "slaveId": 74,
+      "registerBase": 730,
+      "position": [
+        30,
+        3,
+        5
+      ]
+    },
+    {
+      "id": 75,
+      "type": 1,
+      "name": "Bay-5-DS-5",
+      "slaveId": 75,
+      "registerBase": 740,
+      "position": [
+        33,
+        3,
+        5
+      ]
+    },
+    {
+      "id": 76,
+      "type": 1,
+      "name": "Bay-5-DS-6",
+      "slaveId": 76,
+      "registerBase": 750,
+      "position": [
+        36,
+        3,
+        5
+      ]
+    },
+    {
+      "id": 77,
+      "type": 2,
+      "name": "Bay-5-TR-1",
+      "slaveId": 77,
+      "registerBase": 760,
+      "position": [
+        39,
+        6,
+        5
+      ]
+    },
+    {
+      "id": 78,
+      "type": 2,
+      "name": "Bay-5-TR-2",
+      "slaveId": 78,
+      "registerBase": 770,
+      "position": [
+        42,
+        6,
+        5
+      ]
+    },
+    {
+      "id": 79,
+      "type": 2,
+      "name": "Bay-5-TR-3",
+      "slaveId": 79,
+      "registerBase": 780,
+      "position": [
+        45,
+        6,
+        5
+      ]
+    },
+    {
+      "id": 80,
+      "type": 2,
+      "name": "Bay-5-TR-4",
+      "slaveId": 80,
+      "registerBase": 790,
+      "position": [
+        48,
+        6,
+        5
+      ]
+    },
+    {
+      "id": 81,
+      "type": 0,
+      "name": "Bay-6-BRK-1",
+      "slaveId": 81,
+      "registerBase": 800,
+      "position": [
+        3,
+        0,
+        6
+      ]
+    },
+    {
+      "id": 82,
+      "type": 0,
+      "name": "Bay-6-BRK-2",
+      "slaveId": 82,
+      "registerBase": 810,
+      "position": [
+        6,
+        0,
+        6
+      ]
+    },
+    {
+      "id": 83,
+      "type": 0,
+      "name": "Bay-6-BRK-3",
+      "slaveId": 83,
+      "registerBase": 820,
+      "position": [
+        9,
+        0,
+        6
+      ]
+    },
+    {
+      "id": 84,
+      "type": 0,
+      "name": "Bay-6-BRK-4",
+      "slaveId": 84,
+      "registerBase": 830,
+      "position": [
+        12,
+        0,
+        6
+      ]
+    },
+    {
+      "id": 85,
+      "type": 0,
+      "name": "Bay-6-BRK-5",
+      "slaveId": 85,
+      "registerBase": 840,
+      "position": [
+        15,
+        0,
+        6
+      ]
+    },
+    {
+      "id": 86,
+      "type": 0,
+      "name": "Bay-6-BRK-6",
+      "slaveId": 86,
+      "registerBase": 850,
+      "position": [
+        18,
+        0,
+        6
+      ]
+    },
+    {
+      "id": 87,
+      "type": 1,
+      "name": "Bay-6-DS-1",
+      "slaveId": 87,
+      "registerBase": 860,
+      "position": [
+        21,
+        3,
+        6
+      ]
+    },
+    {
+      "id": 88,
+      "type": 1,
+      "name": "Bay-6-DS-2",
+      "slaveId": 88,
+      "registerBase": 870,
+      "position": [
+        24,
+        3,
+        6
+      ]
+    },
+    {
+      "id": 89,
+      "type": 1,
+      "name": "Bay-6-DS-3",
+      "slaveId": 89,
+      "registerBase": 880,
+      "position": [
+        27,
+        3,
+        6
+      ]
+    },
+    {
+      "id": 90,
+      "type": 1,
+      "name": "Bay-6-DS-4",
+      "slaveId": 90,
+      "registerBase": 890,
+      "position": [
+        30,
+        3,
+        6
+      ]
+    },
+    {
+      "id": 91,
+      "type": 1,
+      "name": "Bay-6-DS-5",
+      "slaveId": 91,
+      "registerBase": 900,
+      "position": [
+        33,
+        3,
+        6
+      ]
+    },
+    {
+      "id": 92,
+      "type": 1,
+      "name": "Bay-6-DS-6",
+      "slaveId": 92,
+      "registerBase": 910,
+      "position": [
+        36,
+        3,
+        6
+      ]
+    },
+    {
+      "id": 93,
+      "type": 2,
+      "name": "Bay-6-TR-1",
+      "slaveId": 93,
+      "registerBase": 920,
+      "position": [
+        39,
+        6,
+        6
+      ]
+    },
+    {
+      "id": 94,
+      "type": 2,
+      "name": "Bay-6-TR-2",
+      "slaveId": 94,
+      "registerBase": 930,
+      "position": [
+        42,
+        6,
+        6
+      ]
+    },
+    {
+      "id": 95,
+      "type": 2,
+      "name": "Bay-6-TR-3",
+      "slaveId": 95,
+      "registerBase": 940,
+      "position": [
+        45,
+        6,
+        6
+      ]
+    },
+    {
+      "id": 96,
+      "type": 2,
+      "name": "Bay-6-TR-4",
+      "slaveId": 96,
+      "registerBase": 950,
+      "position": [
+        48,
+        6,
+        6
+      ]
+    },
+    {
+      "id": 97,
+      "type": 0,
+      "name": "Bay-7-BRK-1",
+      "slaveId": 97,
+      "registerBase": 960,
+      "position": [
+        3,
+        0,
+        7
+      ]
+    },
+    {
+      "id": 98,
+      "type": 0,
+      "name": "Bay-7-BRK-2",
+      "slaveId": 98,
+      "registerBase": 970,
+      "position": [
+        6,
+        0,
+        7
+      ]
+    },
+    {
+      "id": 99,
+      "type": 0,
+      "name": "Bay-7-BRK-3",
+      "slaveId": 99,
+      "registerBase": 980,
+      "position": [
+        9,
+        0,
+        7
+      ]
+    },
+    {
+      "id": 100,
+      "type": 0,
+      "name": "Bay-7-BRK-4",
+      "slaveId": 100,
+      "registerBase": 990,
+      "position": [
+        12,
+        0,
+        7
+      ]
+    },
+    {
+      "id": 101,
+      "type": 0,
+      "name": "Bay-7-BRK-5",
+      "slaveId": 101,
+      "registerBase": 1000,
+      "position": [
+        15,
+        0,
+        7
+      ]
+    },
+    {
+      "id": 102,
+      "type": 0,
+      "name": "Bay-7-BRK-6",
+      "slaveId": 102,
+      "registerBase": 1010,
+      "position": [
+        18,
+        0,
+        7
+      ]
+    },
+    {
+      "id": 103,
+      "type": 1,
+      "name": "Bay-7-DS-1",
+      "slaveId": 103,
+      "registerBase": 1020,
+      "position": [
+        21,
+        3,
+        7
+      ]
+    },
+    {
+      "id": 104,
+      "type": 1,
+      "name": "Bay-7-DS-2",
+      "slaveId": 104,
+      "registerBase": 1030,
+      "position": [
+        24,
+        3,
+        7
+      ]
+    },
+    {
+      "id": 105,
+      "type": 1,
+      "name": "Bay-7-DS-3",
+      "slaveId": 105,
+      "registerBase": 1040,
+      "position": [
+        27,
+        3,
+        7
+      ]
+    },
+    {
+      "id": 106,
+      "type": 1,
+      "name": "Bay-7-DS-4",
+      "slaveId": 106,
+      "registerBase": 1050,
+      "position": [
+        30,
+        3,
+        7
+      ]
+    },
+    {
+      "id": 107,
+      "type": 1,
+      "name": "Bay-7-DS-5",
+      "slaveId": 107,
+      "registerBase": 1060,
+      "position": [
+        33,
+        3,
+        7
+      ]
+    },
+    {
+      "id": 108,
+      "type": 1,
+      "name": "Bay-7-DS-6",
+      "slaveId": 108,
+      "registerBase": 1070,
+      "position": [
+        36,
+        3,
+        7
+      ]
+    },
+    {
+      "id": 109,
+      "type": 2,
+      "name": "Bay-7-TR-1",
+      "slaveId": 109,
+      "registerBase": 1080,
+      "position": [
+        39,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 110,
+      "type": 2,
+      "name": "Bay-7-TR-2",
+      "slaveId": 110,
+      "registerBase": 1090,
+      "position": [
+        42,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 111,
+      "type": 2,
+      "name": "Bay-7-TR-3",
+      "slaveId": 111,
+      "registerBase": 1100,
+      "position": [
+        45,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 112,
+      "type": 2,
+      "name": "Bay-7-TR-4",
+      "slaveId": 112,
+      "registerBase": 1110,
+      "position": [
+        48,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 113,
+      "type": 0,
+      "name": "Bay-8-BRK-1",
+      "slaveId": 113,
+      "registerBase": 1120,
+      "position": [
+        3,
+        0,
+        8
+      ]
+    },
+    {
+      "id": 114,
+      "type": 0,
+      "name": "Bay-8-BRK-2",
+      "slaveId": 114,
+      "registerBase": 1130,
+      "position": [
+        6,
+        0,
+        8
+      ]
+    },
+    {
+      "id": 115,
+      "type": 0,
+      "name": "Bay-8-BRK-3",
+      "slaveId": 115,
+      "registerBase": 1140,
+      "position": [
+        9,
+        0,
+        8
+      ]
+    },
+    {
+      "id": 116,
+      "type": 0,
+      "name": "Bay-8-BRK-4",
+      "slaveId": 116,
+      "registerBase": 1150,
+      "position": [
+        12,
+        0,
+        8
+      ]
+    },
+    {
+      "id": 117,
+      "type": 0,
+      "name": "Bay-8-BRK-5",
+      "slaveId": 117,
+      "registerBase": 1160,
+      "position": [
+        15,
+        0,
+        8
+      ]
+    },
+    {
+      "id": 118,
+      "type": 0,
+      "name": "Bay-8-BRK-6",
+      "slaveId": 118,
+      "registerBase": 1170,
+      "position": [
+        18,
+        0,
+        8
+      ]
+    },
+    {
+      "id": 119,
+      "type": 1,
+      "name": "Bay-8-DS-1",
+      "slaveId": 119,
+      "registerBase": 1180,
+      "position": [
+        21,
+        3,
+        8
+      ]
+    },
+    {
+      "id": 120,
+      "type": 1,
+      "name": "Bay-8-DS-2",
+      "slaveId": 120,
+      "registerBase": 1190,
+      "position": [
+        24,
+        3,
+        8
+      ]
+    },
+    {
+      "id": 121,
+      "type": 1,
+      "name": "Bay-8-DS-3",
+      "slaveId": 121,
+      "registerBase": 1200,
+      "position": [
+        27,
+        3,
+        8
+      ]
+    },
+    {
+      "id": 122,
+      "type": 1,
+      "name": "Bay-8-DS-4",
+      "slaveId": 122,
+      "registerBase": 1210,
+      "position": [
+        30,
+        3,
+        8
+      ]
+    },
+    {
+      "id": 123,
+      "type": 1,
+      "name": "Bay-8-DS-5",
+      "slaveId": 123,
+      "registerBase": 1220,
+      "position": [
+        33,
+        3,
+        8
+      ]
+    },
+    {
+      "id": 124,
+      "type": 1,
+      "name": "Bay-8-DS-6",
+      "slaveId": 124,
+      "registerBase": 1230,
+      "position": [
+        36,
+        3,
+        8
+      ]
+    },
+    {
+      "id": 125,
+      "type": 2,
+      "name": "Bay-8-TR-1",
+      "slaveId": 125,
+      "registerBase": 1240,
+      "position": [
+        39,
+        6,
+        8
+      ]
+    },
+    {
+      "id": 126,
+      "type": 2,
+      "name": "Bay-8-TR-2",
+      "slaveId": 126,
+      "registerBase": 1250,
+      "position": [
+        42,
+        6,
+        8
+      ]
+    },
+    {
+      "id": 127,
+      "type": 2,
+      "name": "Bay-8-TR-3",
+      "slaveId": 127,
+      "registerBase": 1260,
+      "position": [
+        45,
+        6,
+        8
+      ]
+    },
+    {
+      "id": 128,
+      "type": 2,
+      "name": "Bay-8-TR-4",
+      "slaveId": 128,
+      "registerBase": 1270,
+      "position": [
+        48,
+        6,
+        8
+      ]
+    }
+  ]
+}
