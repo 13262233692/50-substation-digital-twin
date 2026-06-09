@@ -6,6 +6,8 @@ import SwitchCoverInstances from './SwitchCoverInstances'
 import BreakerBladeInstances from './BreakerBladeInstances'
 import EnergyFieldInstances from './EnergyFieldInstances'
 import BloomEffect from './BloomEffect'
+import DeadlyPathParticles from './DeadlyPathParticles'
+import MaintenanceMode from './MaintenanceMode'
 
 export default function SubstationScene() {
   return (
@@ -32,6 +34,8 @@ export default function SubstationScene() {
         <SwitchCoverInstances />
         <BreakerBladeInstances />
         <EnergyFieldInstances />
+        <MaintenanceMode />
+        <DeadlyPathParticles />
       </BloomEffect>
     </Canvas>
   )

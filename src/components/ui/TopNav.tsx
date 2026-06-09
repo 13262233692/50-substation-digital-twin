@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
-import { Activity } from 'lucide-react'
+import { Activity, Shield } from 'lucide-react'
 import ConnectionIndicator from './ConnectionIndicator'
+import { useTopologyStore } from '@/stores/topologyStore'
 
 const NAV_ITEMS = [
   { to: '/', label: '主控台' },
@@ -9,6 +10,9 @@ const NAV_ITEMS = [
 ]
 
 export default function TopNav() {
+  const maintenanceMode = useTopologyStore((s) => s.maintenanceMode)
+  const setMaintenanceMode = useTopologyStore((s) => s.setMaintenanceMode)
+
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-[#1A1F2E]/80 backdrop-blur-md border-b border-[#2A3040]">
       <div className="flex items-center justify-between h-14 px-6">
@@ -42,7 +46,20 @@ export default function TopNav() {
           ))}
         </nav>
 
-        <ConnectionIndicator />
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setMaintenanceMode(!maintenanceMode)}
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold tracking-wider rounded border transition-all ${
+              maintenanceMode
+                ? 'bg-[#FF3D00]/20 border-[#FF3D00] text-[#FF3D00]'
+                : 'bg-[#0A0E17] border-[#2A3040] text-gray-400 hover:border-[#f97316] hover:text-[#f97316]'
+            }`}
+          >
+            <Shield className="w-3.5 h-3.5" />
+            {maintenanceMode ? '检修模式 ON' : '模拟检修'}
+          </button>
+          <ConnectionIndicator />
+        </div>
       </div>
     </div>
   )

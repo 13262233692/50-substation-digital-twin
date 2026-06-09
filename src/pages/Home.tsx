@@ -4,6 +4,7 @@ import TopNav from '@/components/ui/TopNav'
 import DeviceStatusPanel from '@/components/ui/DeviceStatusPanel'
 import AlertBar from '@/components/ui/AlertBar'
 import PerformanceOverlay from '@/components/ui/PerformanceOverlay'
+import MaintenancePanel from '@/components/ui/MaintenancePanel'
 import { useWebSocket } from '@/hooks/useWebSocket'
 import { useConnectionStore } from '@/stores/connectionStore'
 
@@ -33,6 +34,7 @@ export default function Home() {
         <SubstationScene />
         <DeviceStatusPanel />
         <PerformanceOverlay />
+        <MaintenancePanel />
       </div>
       <AlertBar />
     </div>
